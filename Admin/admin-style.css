@@ -1,0 +1,361 @@
+/* admin-style.css */
+
+/* General Reset */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'Poppins', sans-serif;
+}
+
+body {
+    background: #f4f6f9;
+    color: #333;
+}
+
+/* Sidebar */
+.sidebar {
+    position: fixed;
+    left: 0;
+    top: 0;
+    width: 250px;
+    height: 100vh;
+    background-color: #1f2937; /* Dark Gray */
+    color: #fff;
+    padding: 30px 20px;
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-start;
+}
+
+.sidebar h2 {
+    text-align: center;
+    margin-bottom: 40px;
+    font-size: 24px;
+    color: #00bfff;
+}
+
+.sidebar ul {
+    list-style: none;
+}
+
+.sidebar ul li {
+    margin-bottom: 20px;
+}
+
+.sidebar ul li a {
+    text-decoration: none;
+    color: #fff;
+    font-weight: 500;
+    display: block;
+    padding: 10px;
+    border-radius: 6px;
+    transition: all 0.3s ease;
+}
+
+.sidebar ul li a:hover,
+.sidebar ul li a.active {
+    background-color: #00bfff;
+    color: #fff;
+}
+
+/* Main Content */
+.main-content {
+    margin-left: 270px;
+    padding: 30px 40px;
+    min-height: 100vh;
+}
+
+/* Dashboard Heading */
+.main-content h1 {
+    font-size: 28px;
+    margin-bottom: 30px;
+    color: #1f2937;
+}
+
+/* Cards */
+.cards {
+    display: flex;
+    gap: 20px;
+    margin-bottom: 40px;
+}
+
+.card {
+    flex: 1;
+    background: #fff;
+    padding: 20px;
+    border-radius: 12px;
+    text-align: center;
+    box-shadow: 0 4px 12px rgba(0,0,0,0.05);
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.card:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 8px 20px rgba(0,0,0,0.1);
+}
+
+.card h3 {
+    font-size: 32px;
+    margin-bottom: 10px;
+    color: #00bfff;
+}
+
+.card p {
+    font-size: 16px;
+    color: #555;
+}
+
+/* Tables */
+table {
+    width: 100%;
+    border-collapse: collapse;
+    background: #fff;
+    border-radius: 8px;
+    overflow: hidden;
+    box-shadow: 0 4px 12px rgba(0,0,0,0.05);
+}
+
+table th, table td {
+    padding: 15px;
+    text-align: left;
+    border-bottom: 1px solid #eee;
+}
+
+table th {
+    background: #00bfff;
+    color: #fff;
+}
+
+table tr:hover {
+    background: #f1f5f9;
+}
+
+table a {
+    color: #00bfff;
+    text-decoration: none;
+    font-weight: 500;
+}
+
+table a:hover {
+    text-decoration: underline;
+}
+
+/* Form Styling */
+form {
+    background: #fff;
+    padding: 20px 25px;
+    border-radius: 12px;
+    box-shadow: 0 4px 12px rgba(0,0,0,0.05);
+    margin-bottom: 40px;
+}
+
+form input[type="text"],
+form input[type="file"],
+form textarea {
+    width: 100%;
+    padding: 12px;
+    margin-bottom: 15px;
+    border: 1px solid #ccc;
+    border-radius: 8px;
+    font-size: 14px;
+}
+
+form button {
+    background: #00bfff;
+    color: #fff;
+    border: none;
+    padding: 12px 25px;
+    font-size: 16px;
+    border-radius: 8px;
+    cursor: pointer;
+    transition: all 0.3s ease;
+}
+
+form button:hover {
+    background: #0095d1;
+}
+
+/* Login Page */
+.login-container {
+    max-width: 400px;
+    margin: 100px auto;
+    background: #fff;
+    padding: 30px 25px;
+    border-radius: 12px;
+    box-shadow: 0 4px 20px rgba(0,0,0,0.1);
+    text-align: center;
+}
+
+.login-container h2 {
+    margin-bottom: 25px;
+    color: #00bfff;
+}
+
+.login-container input {
+    width: 100%;
+    padding: 12px;
+    margin-bottom: 15px;
+    border-radius: 8px;
+    border: 1px solid #ccc;
+    font-size: 14px;
+}
+
+.login-container button {
+    width: 100%;
+}
+
+.error {
+    color: red;
+    margin-bottom: 15px;
+}
+
+/* Responsive */
+@media (max-width: 992px) {
+    .cards {
+        flex-direction: column;
+    }
+
+    .main-content {
+        margin-left: 0;
+        padding: 20px;
+    }
+
+    .sidebar {
+        position: relative;
+        width: 100%;
+        height: auto;
+        flex-direction: row;
+        padding: 15px;
+        display: flex;
+        overflow-x: auto;
+    }
+
+    .sidebar ul {
+        display: flex;
+        gap: 15px;
+    }
+
+    .sidebar ul li {
+        margin-bottom: 0;
+    }
+}
+
+
+/* Form Styling (already in admin-style.css) */
+form textarea {
+    width: 100%;
+    padding: 12px;
+    margin-bottom: 15px;
+    border: 1px solid #ccc;
+    border-radius: 8px;
+    font-size: 14px;
+    min-height: 100px;
+    resize: vertical;
+}
+
+/* Image Preview */
+form img {
+    margin-top: 10px;
+    border-radius: 6px;
+    border: 1px solid #ddd;
+}
+
+/* Table Images */
+table img {
+    border-radius: 6px;
+    border: 1px solid #ddd;
+    object-fit: cover;
+}
+
+/* Textarea for project description */
+form textarea {
+    width: 100%;
+    padding: 12px;
+    margin-bottom: 15px;
+    border: 1px solid #ccc;
+    border-radius: 8px;
+    min-height: 100px;
+    resize: vertical;
+}
+
+/* Select dropdown for status */
+form select {
+    width: 100%;
+    padding: 12px;
+    margin-bottom: 15px;
+    border-radius: 8px;
+    border: 1px solid #ccc;
+    font-size: 14px;
+}
+
+/* Table Images */
+table img {
+    border-radius: 6px;
+    border: 1px solid #ddd;
+    object-fit: cover;
+}
+
+/* Add labels spacing */
+form label {
+    display: block;
+    margin-top: 10px;
+    margin-bottom: 5px;
+    font-weight: 600;
+}
+
+
+/* Newsletter Cards */
+.newsletter-cards {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 20px;
+    margin-bottom: 40px;
+}
+
+.newsletter-card {
+    display: block;
+    width: 220px;
+    background: #fff;
+    border-radius: 12px;
+    overflow: hidden;
+    box-shadow: 0 4px 12px rgba(0,0,0,0.05);
+    text-decoration: none;
+    color: #333;
+    transition: transform 0.3s, box-shadow 0.3s;
+}
+
+.newsletter-card:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 8px 20px rgba(0,0,0,0.1);
+}
+
+.card-header img, .placeholder-img {
+    width: 100%;
+    height: 120px;
+    object-fit: cover;
+    background: #eee;
+}
+
+.placeholder-img {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 14px;
+    color: #999;
+}
+
+.card-body {
+    padding: 15px;
+}
+
+.card-body h3 {
+    font-size: 16px;
+    margin-bottom: 5px;
+    color: #00bfff;
+}
+
+.card-body p {
+    font-size: 13px;
+    margin-bottom: 5px;
+}
