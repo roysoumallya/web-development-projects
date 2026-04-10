@@ -1,4 +1,79 @@
+/* typing animation */
 
+const typingWords = [
+
+"Modern Digital Solutions",
+
+"Creative Web Experiences",
+
+"Professional IT Services"
+
+];
+
+let wordIndex = 0;
+let charIndex = 0;
+
+const typingElement =
+document.getElementById("typing-text");
+
+
+function typeWord(){
+
+if(charIndex < typingWords[wordIndex].length){
+
+typingElement.textContent +=
+typingWords[wordIndex].charAt(charIndex);
+
+charIndex++;
+
+setTimeout(typeWord,70);
+
+}
+
+else{
+
+setTimeout(deleteWord,1200);
+
+}
+
+}
+
+
+function deleteWord(){
+
+if(charIndex > 0){
+
+typingElement.textContent =
+typingWords[wordIndex].substring(0,charIndex-1);
+
+charIndex--;
+
+setTimeout(deleteWord,40);
+
+}
+
+else{
+
+wordIndex++;
+
+if(wordIndex >= typingWords.length){
+
+wordIndex = 0;
+
+}
+
+setTimeout(typeWord,300);
+
+}
+
+}
+
+
+document.addEventListener("DOMContentLoaded", function(){
+
+typeWord();
+
+});
 
 // mobile menu
 

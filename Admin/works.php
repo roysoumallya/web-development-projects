@@ -1,10 +1,13 @@
 <?php
-session_start();
+include "auth-check.php";
+include "db.php";
+
+
 if(!isset($_SESSION['admin'])){
     header("Location: login.php");
     exit();
 }
-include "db.php";
+
 
 // Function to generate project_id
 function generateProjectID($conn) {
@@ -79,16 +82,7 @@ if(isset($_GET['edit'])){
 <link rel="stylesheet" href="admin-style.css">
 </head>
 <body>
-<div class="sidebar">
-    <h2>Admin Panel</h2>
-    <ul>
-        <li><a href="dashboard.php">Dashboard</a></li>
-        <li><a href="newsletters.php">Newsletters</a></li>
-        <li><a href="services.php">Services</a></li>
-        <li><a href="works.php" class="active">Works</a></li>
-        <li><a href="logout.php">Logout</a></li>
-    </ul>
-</div>
+<?php include "includes/sidebar.php"; ?>
 
 <div class="main-content">
 <h1><?php echo $edit ? "Edit" : "Add"; ?> Work</h1>

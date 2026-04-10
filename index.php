@@ -9,7 +9,10 @@
     <div class="container hero-grid">
 
         <div class="hero-text">
-            <h1>We Build <span>Modern</span> Digital Solutions</h1>
+            <h1>
+            We Build 
+            <span id="typing-text"></span>
+            </h1>
             <p>
                 Interactive websites, web apps and digital experiences
                 designed for performance and scalability.

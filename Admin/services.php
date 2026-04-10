@@ -1,6 +1,7 @@
 <?php
-session_start();
+include "auth-check.php";
 include "db.php";
+
 
 // Prevent access without login
 if(!isset($_SESSION['admin'])){
@@ -58,16 +59,7 @@ if(isset($_GET['edit'])){
     <link rel="stylesheet" href="admin-style.css">
 </head>
 <body>
-<div class="sidebar">
-    <h2>Admin Panel</h2>
-    <ul>
-        <li><a href="dashboard.php">Dashboard</a></li>
-        <li><a href="newsletters.php">Newsletters</a></li>
-        <li><a href="services.php" class="active">Services</a></li>
-        <li><a href="works.php">Works</a></li>
-        <li><a href="logout.php">Logout</a></li>
-    </ul>
-</div>
+<?php include "includes/sidebar.php"; ?>
 
 <div class="main-content">
     <h1><?php echo $edit ? "Edit Service" : "Add New Service"; ?></h1>

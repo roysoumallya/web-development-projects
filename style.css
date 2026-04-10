@@ -258,6 +258,26 @@ margin: auto;
 min-height:350px;
 }
 
+/* typing cursor */
+
+.hero span #typing-text{
+color:#00bcd4;
+border-right:3px solid #00bcd4;
+padding-right:5px;
+white-space:nowrap;
+animation:cursorBlink 0.8s infinite;
+}
+
+@keyframes cursorBlink{
+
+0%{border-color:#00bcd4;}
+
+50%{border-color:transparent;}
+
+100%{border-color:#00bcd4;}
+
+}
+
 .hero-img{
 display:flex;
 justify-content:center;

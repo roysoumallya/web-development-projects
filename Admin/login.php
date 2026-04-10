@@ -1,23 +1,47 @@
 <?php
+
+
+
 session_start();
+
+
+/* prevent cache */
+
+header("Cache-Control: no-cache, no-store, must-revalidate");
+
+header("Pragma: no-cache");
+
+header("Expires: 0");
+
+
+
 include "db.php";
 
 if(isset($_POST['login'])){
-    $username = $_POST['username'];
-    $password = $_POST['password'];
 
-    // Fetch user from database
-    $result = mysqli_query($conn, "SELECT * FROM admin_users WHERE username='$username'");
-    $admin = mysqli_fetch_assoc($result);
+$username = $_POST['username'];
+$password = $_POST['password'];
 
-    // Direct comparison since password is plain text
-    if($admin && $password === $admin['password']){
-        $_SESSION['admin'] = $username;
-        header("Location: dashboard.php");
-        exit();
-    } else {
-        $error = "Invalid Credentials!";
-    }
+$result = mysqli_query($conn,
+"SELECT * FROM admin_users WHERE username='$username'");
+
+$admin = mysqli_fetch_assoc($result);
+
+if($admin && $password === $admin['password']){
+
+$_SESSION['admin']=$username;
+
+header("Location: dashboard.php");
+exit();
+
+}
+
+else{
+
+$error="Invalid Credentials";
+
+}
+
 }
 ?>
 

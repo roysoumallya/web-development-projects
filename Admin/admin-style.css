@@ -152,6 +152,8 @@ form {
 
 form input[type="text"],
 form input[type="file"],
+form input[type="password"],
+form input[type="number"],
 form textarea {
     width: 100%;
     padding: 12px;
@@ -358,4 +360,91 @@ form label {
 .card-body p {
     font-size: 13px;
     margin-bottom: 5px;
+}
+
+
+/* profile section */
+
+.profile-box{
+
+max-width:500px;
+
+background:white;
+
+padding:25px;
+
+border-radius:12px;
+
+box-shadow:0 4px 12px rgba(0,0,0,0.05);
+
+}
+
+
+
+/* sidebar bottom links */
+
+.sidebar-bottom{
+
+margin-top:auto;
+
+display:flex;
+
+flex-direction:column;
+
+gap:10px;
+
+}
+
+
+
+.profile-link{
+
+background:#00bfff;
+
+color:white;
+
+text-align:center;
+
+padding:10px;
+
+border-radius:6px;
+
+text-decoration:none;
+
+font-weight:500;
+
+}
+
+
+
+.profile-link:hover{
+
+background:#0095d1;
+
+}
+
+
+
+.logout-link{
+
+text-align:center;
+
+padding:10px;
+
+border-radius:6px;
+
+background:#ef4444;
+
+color:white;
+
+text-decoration:none;
+
+}
+
+
+
+.logout-link:hover{
+
+background:#dc2626;
+
 }

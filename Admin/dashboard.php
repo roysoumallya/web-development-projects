@@ -1,11 +1,9 @@
 <?php
+include "auth-check.php";
 
-session_start();
 include "db.php";
-// Prevent browser caching
-header("Cache-Control: no-cache, no-store, must-revalidate"); // HTTP 1.1
-header("Pragma: no-cache"); // HTTP 1.0
-header("Expires: 0"); // Proxies
+
+
 
 // Check if admin is logged in
 if(!isset($_SESSION['admin'])){
@@ -33,19 +31,10 @@ if(!isset($_SESSION['admin'])){
             }
         };
     </script>
-    <script src="js/admin-script.js" defer></script>
+    <script src="script.js" defer></script>
 </head>
 <body>
-<div class="sidebar">
-    <h2>Admin Panel</h2>
-    <ul>
-        <li><a href="dashboard.php">Dashboard</a></li>
-        <li><a href="newsletters.php">Newsletters</a></li>
-        <li><a href="services.php">Services</a></li>
-        <li><a href="works.php">Works</a></li>
-        <li><a href="logout.php">Logout</a></li>
-    </ul>
-</div>
+<?php include "includes/sidebar.php"; ?>
 
 <div class="main-content">
     <h1>Welcome, <?php echo $_SESSION['admin']; ?></h1>
